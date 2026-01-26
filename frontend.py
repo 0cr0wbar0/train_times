@@ -1,7 +1,7 @@
 import requests
 import webbrowser
 
-def menu(question: str, choices: list[str]):
+def menu(question: str, choices: list[str]) -> str:
     choice = None
     # ["UK", "France", "Switzerland"] -> {"1" : "UK", "2" : "France", "3" : "Switzerland"}
     choices = {str(i) : c for i, c in enumerate(choices, 1)}
@@ -11,7 +11,7 @@ def menu(question: str, choices: list[str]):
         return choices.get(choice).lower()
     return choice.lower()
 
-def single_input(question: str):
+def single_input(question: str) -> str:
     return input(f"{question}: ")
 
 if __name__ == '__main__':
